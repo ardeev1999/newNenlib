@@ -1,0 +1,22 @@
+# Operating systems
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Editors and IDEs
+.vscode/
+.idea/
+*.swp
+
+# Local Vercel data
+.vercel/
+
+# Dependencies and generated files
+node_modules/
+dist/
+*.log
+
+# Local environment files
+.env
+.env.*
+!.env.example

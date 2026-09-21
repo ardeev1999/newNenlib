@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#082e45">
+  <title>Ненецкая центральная библиотека имени А. И. Пичкова</title>
+  <meta name="description" content="Интерактивный прототип новой главной страницы Ненецкой центральной библиотеки имени А. И. Пичкова.">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preload" href="assets/library-building.jpg" as="image">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <svg class="svg-sprite" aria-hidden="true">
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4"></path></symbol>
+    <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12Z"></path><circle cx="12" cy="12" r="2.6"></circle></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"></path></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"></path></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M14 7l5 5-5 5"></path></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 5.5A3.5 3.5 0 0 1 7.5 2H11v17H7.5A3.5 3.5 0 0 0 4 22V5.5Z"></path><path d="M20 5.5A3.5 3.5 0 0 0 16.5 2H13v17h3.5A3.5 3.5 0 0 1 20 22V5.5Z"></path></symbol>
+    <symbol id="i-calendar" viewBox="0 0 24 24"><path d="M5 4h14a2 2 0 0 1 2 2v14H3V6a2 2 0 0 1 2-2Z"></path><path d="M8 2v4M16 2v4M3 9h18"></path></symbol>
+    <symbol id="i-ticket" viewBox="0 0 24 24"><path d="M4 5h16v4a3 3 0 0 0 0 6v4H4v-4a3 3 0 0 0 0-6V5Z"></path><path d="M12 7v2M12 11v2M12 15v2"></path></symbol>
+    <symbol id="i-map" viewBox="0 0 24 24"><path d="m3 6 6-3 6 3 6-3v15l-6 3-6-3-6 3V6Z"></path><path d="M9 3v15M15 6v15"></path></symbol>
+    <symbol id="i-laptop" viewBox="0 0 24 24"><path d="M5 4h14v11H5zM2 19h20"></path></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"></path><circle cx="12" cy="10" r="2"></circle></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 3h4l2 5-3 2a14 14 0 0 0 6 6l2-3 5 2v4c0 1-1 2-2 2A16 16 0 0 1 3 5c0-1 1-2 2-2Z"></path></symbol>
+  </svg>
+
+  <a class="skip-link" href="#content">Перейти к содержанию</a>
+  <div class="utility-bar">
+    <div class="container utility-inner">
+      <span>Нарьян-Мар · 21 сентября 2026</span>
+      <div class="utility-links">
+        <a href="tel:+78185342819"><svg><use href="#i-phone"></use></svg> +7 (81853) 4-28-19</a>
+        <a href="https://nenlib.ru/jirbis2/index.php?option=com_content&amp;view=article&amp;id=2114&amp;Itemid=409"><svg><use href="#i-clock"></use></svg> Сегодня 11:00–19:00</a>
+      </div>
+    </div>
+  </div>
+
+  <header class="site-header" id="top">
+    <div class="container header-main">
+      <a class="brand" href="#top" aria-label="На главную">
+        <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 64 64"><path d="M10 17c9-4 16-2 22 3v33c-6-5-13-7-22-3V17Z"></path><path d="M54 17c-9-4-16-2-22 3v33c6-5 13-7 22-3V17Z"></path><path d="m32 6 2.2 6.5L41 15l-6.8 2.5L32 24l-2.2-6.5L23 15l6.8-2.5L32 6Z"></path></svg></span>
+        <span class="brand-copy"><strong>Ненецкая центральная библиотека</strong><small>имени А. И. Пичкова</small></span>
+      </a>
+      <div class="header-actions">
+        <button class="icon-button search-open" type="button" aria-label="Открыть поиск"><svg><use href="#i-search"></use></svg><span>Поиск</span></button>
+        <button class="icon-button accessibility-toggle" type="button" aria-pressed="false"><svg><use href="#i-eye"></use></svg><span>Версия для слабовидящих</span></button>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav"><svg><use href="#i-menu"></use></svg><span class="sr-only">Открыть меню</span></button>
+      </div>
+    </div>
+
+    <nav class="main-nav" id="main-nav" aria-label="Основное меню">
+      <div class="container nav-inner">
+        <div class="nav-item has-submenu"><button type="button" aria-expanded="false">О библиотеке</button><div class="submenu"><a href="https://nenlib.ru/jirbis2/index.php?option=com_content&amp;view=article&amp;id=1">Библиотека сегодня</a><a href="https://nenlib.ru/jirbis2/index.php?option=com_content&amp;view=article&amp;id=2">История библиотеки</a><a href="https://nenlib.ru/jirbis2/index.php?option=com_content&amp;view=article&amp;id=15&amp;Itemid=396">Отделы и службы</a><a href="https://nenlib.ru/jirbis2/index.php?option=com_content&amp;view=article&amp;id=2114&amp;Itemid=409">Режим работы</a></div></div>
+        <div class="nav-item has-submenu"><button type="button" aria-expanded="false">Услуги</button><div class="submenu"><a href="https://nenlib.ru/jirbis2/index.php?option=com_content&amp;view=article&amp;id=2430&amp;Itemid=1029">Пушкинская карта</a><a href="https://nenlib.ru/jirbis2/index.php?option=com_content&amp;view=article&amp;id=955&amp;Itemid=625">Онлайн-услуги</a><a href="https://nenlib.ru/jirbis2/index.php?option=com_content&amp;view=article&amp;id=954&amp;Itemid=624">Электронные читальные залы</a><a href="https://nenlib.ru/jirbis2/index.php?option=com_content&amp;view=article&amp;id=21&amp;Itemid=402">Платные услуги</a></div></div>
+        <div class="nav-item has-submenu"><button type="button" aria-expanded="false">Ресурсы</button><div class="submenu"><a href="https://nenlib.ru/jirbis2/index.php?option=com_content&amp;view=article&amp;id=10">Фонды и коллекции</a><a href="https://nenlib.ru/jirbis2/index.php?option=com_content&amp;view=category&amp;id=36">Наши издания</a><a href="https://nenlib.ru/jirbis2/index.php?option=com_irbis&amp;view=irbis&amp;Itemid=364">Новые поступления</a></div></div>
+        <a href="https://nenlib.ru/jirbis2/index.php?option=com_content&amp;view=category&amp;layout=blog&amp;id=90&amp;Itemid=393">Новости</a>
+        <a href="https://nenlib.ru/jirbis2/index.php?option=com_content&amp;view=category&amp;id=89&amp;Itemid=760">Афиша</a>
+        <a href="https://nenlib.ru/jirbis2/index.php?option=com_content&amp;view=article&amp;id=120">Библиотеки-филиалы</a>
+        <a class="catalog-link" href="https://nenlib.ru/jirbis2/index.php?option=com_irbis&amp;view=irbis&amp;Itemid=108"><svg><use href="#i-book"></use></svg> Электронный каталог</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="content">
+    <section class="hero" aria-label="Главная информация">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow">Главное</span>
+          <div class="hero-slides" aria-live="polite">
+            <article class="hero-slide active" data-slide="0"><p class="hero-kicker">Обновлённый режим работы</p><h1>С 1 сентября библиотека работает по обычному графику</h1><p>Ждём читателей ежедневно с 11:00 до 19:00. Пятница — выходной день.</p><div class="hero-buttons"><a class="button primary" href="https://nenlib.ru/jirbis2/index.php?option=com_content&amp;view=article&amp;id=2114&amp;Itemid=409">Посмотреть режим работы <svg><use href="#i-arrow"></use></svg></a><a class="button ghost" href="#events">Ближайшие события</a></div></article>
+            <article class="hero-slide" data-slide="1" hidden><p class="hero-kicker">Каталог всегда рядом</p><h1>Найдите нужную книгу в электронном каталоге</h1><p>Поиск по фонду центральной библиотеки и краеведческой коллекции.</p><div class="hero-buttons"><a class="button primary" href="https://nenlib.ru/jirbis2/index.php?option=com_irbis&amp;view=irbis&amp;Itemid=108">Перейти к поиску <svg><use href="#i-arrow"></use></svg></a><a class="button ghost" href="https://nenlib.ru/jirbis2/index.php?option=com_irbis&amp;view=irbis&amp;Itemid=364">Новые поступления</a></div></article>
+          </div>
+          <div class="slider-controls" aria-label="Переключение слайдов"><button class="slide-dot active" type="button" data-target="0" aria-label="Слайд 1"></button><button class="slide-dot" type="button" data-target="1" aria-label="Слайд 2"></button></div>
+        </div>
+        <div class="hero-visual"><img src="assets/library-building.jpg" alt="Здание Ненецкой центральной библиотеки имени А. И. Пичкова"><div class="hero-badge"><strong>С 1930 года</strong><span>читаем Север вместе</span></div></div>
+      </div>
+    </section>
+
+    <section class="quick-section" aria-labelledby="quick-title">
+      <div class="container">
+        <div class="section-heading compact"><div><span class="eyebrow">Читателям</span><h2 id="quick-title">Быстрый доступ</h2></div><button class="text-button services-toggle" type="button" aria-expanded="false">Все сервисы <svg><use href="#i-arrow"></use></svg></button></div>
+        <div class="quick-grid">
+          <a class="quick-card feature" href="https://nenlib.ru/jirbis2/index.php?option=com_irbis&amp;view=irbis&amp;Itemid=108"><span class="quick-icon"><svg><use href="#i-search"></use></svg></span><span><strong>Электронный каталог</strong><small>Найти книгу в фонде</small></span><svg class="card-arrow"><use href="#i-arrow"></use></svg></a>
+          <a class="quick-card" href="https://nenlib.ru/jirbis2/index.php?option=com_content&amp;view=category&amp;id=89&amp;Itemid=760"><span class="quick-icon"><svg><use href="#i-calendar"></use></svg></span><span><strong>Афиша</strong><small>События и встречи</small></span></a>
+          <a class="quick-card" href="https://nenlib.ru/jirbis2/index.php?option=com_content&amp;view=article&amp;id=955&amp;Itemid=625"><span class="quick-icon"><svg><use href="#i-laptop"></use></svg></span><span><strong>Онлайн-услуги</strong><small>Справки и обращения</small></span></a>
+          <a class="quick-card" href="https://nenlib.ru/jirbis2/index.php?option=com_irbis&amp;view=irbis&amp;Itemid=364"><span class="quick-icon"><svg><use href="#i-book"></use></svg></span><span><strong>Новые поступления</strong><small>Что почитать</small></span></a>
+          <a class="quick-card" href="https://literary-map-nao.vercel.app/"><span class="quick-icon"><svg><use href="#i-map"></use></svg></span><span><strong>Литературная карта</strong><small>Авторы и места НАО</small></span></a>
+          <a class="quick-card" href="https://muzaticket.ru/iframe/organizations/organization-gbuk-nao-neneckaya-centralnaya-biblioteka-imeni-a-i-pichkova-646436"><span class="quick-icon"><svg><use href="#i-ticket"></use></svg></span><span><strong>Купить билет</strong><small>На мероприятия</small></span></a>
+        </div>
+        <div class="extra-services" hidden><a href="https://nenlib.ru/jirbis2/index.php?option=com_content&amp;view=article&amp;id=954&amp;Itemid=624">Электронные читальные залы</a><a href="https://nenlib.ru/jirbis2/index.php?option=com_content&amp;view=article&amp;id=20&amp;Itemid=401">МБА и доставка документов</a><a href="https://nenlib.ru/jirbis2/index.php?option=com_aicontactsafe&amp;view=message&amp;layout=message&amp;pf=3&amp;Itemid=718">Обратная связь</a></div>
+      </div>
+    </section>
+
+    <section class="news-section section-space" aria-labelledby="news-title">
+      <div class="container">
+        <div class="section-heading"><div><span class="eyebrow">Будьте в курсе</span><h2 id="news-title">Новости библиотеки</h2></div><div class="tabs" role="tablist" aria-label="Раздел новостей"><button class="tab active" type="button" role="tab" aria-selected="true" data-news="main">Центральная библиотека</button><button class="tab" type="button" role="tab" aria-selected="false" data-news="branches">Филиалы</button></div></div>
+        <div class="news-panel active" data-panel="main"><div class="news-grid">
+          <a class="lead-story" href="https://nenlib.ru/jirbis2/index.php?option=com_content&amp;view=article&amp;id=2451:kulturnye-kanikuly-26&amp;catid=27:news&amp;Itemid=759"><div class="story-image"><img src="assets/cultural-holidays.jpg" alt="Участники программы Культурные каникулы"><span class="story-tag">Детям</span></div><div class="story-copy"><time datetime="2026-09">Сентябрь 2026</time><h3>«Культурные каникулы»</h3><p>Познавательные встречи, творческие занятия и игры для детей и подростков прошли в библиотеке.</p><span class="read-more">Читать новость <svg><use href="#i-arrow"></use></svg></span></div></a>
+          <div class="story-list">
+            <a class="story-row" href="https://nenlib.ru/jirbis2/index.php?option=com_content&amp;view=article&amp;id=2449:osennij-intellektualnyj-zabeg-begushchaya-kniga-sostoyalsya&amp;catid=27:news&amp;Itemid=759"><img src="assets/running-book.jpg" alt="Участники акции Бегущая книга"><span><time datetime="2026-09">Сентябрь 2026</time><strong>Осенний интеллектуальный забег «Бегущая книга» состоялся</strong></span></a>
+            <a class="story-row text-only" href="https://nenlib.ru/jirbis2/index.php?option=com_content&amp;view=article&amp;id=2445:vstrecha-v-biblioteke&amp;catid=27:news&amp;Itemid=759"><span><time datetime="2026-09">Сентябрь 2026</time><strong>Встреча в библиотеке</strong><small>Новый повод собраться, общаться и узнавать больше.</small></span><svg><use href="#i-arrow"></use></svg></a>
+            <a class="story-row text-only" href="https://nenlib.ru/jirbis2/index.php?option=com_content&amp;view=article&amp;id=2442:pozdravlenie-s-dnem-rozhdeniya&amp;catid=27:news&amp;Itemid=759"><span><time datetime="2026-09">Сентябрь 2026</time><strong>Поздравление Сергею Тарабукину</strong><small>Литературная жизнь Ненецкого автономного округа.</small></span><svg><use href="#i-arrow"></use></svg></a>
+            <a class="all-news" href="https://nenlib.ru/jirbis2/index.php?option=com_content&amp;view=category&amp;layout=blog&amp;id=90&amp;Itemid=393">Все новости <svg><use href="#i-arrow"></use></svg></a>
+          </div>
+        </div></div>
+        <div class="news-panel" data-panel="branches" hidden><div class="branch-news-grid"><a href="https://nenlib.ru/jirbis2/index.php?option=com_content&amp;view=category&amp;id=92"><span>Филиалы</span><h3>Подвиг во имя жизни</h3><p>Тематическая программа и разговор о мужестве.</p></a><a href="https://nenlib.ru/jirbis2/index.php?option=com_content&amp;view=category&amp;id=92"><span>Филиалы</span><h3>«Здравствуй, лето и книжные приключения!»</h3><p>Летние программы библиотек округа.</p></a><a href="https://nenlib.ru/jirbis2/index.php?option=com_content&amp;view=category&amp;id=92"><span>Хорей-Вер</span><h3>Встреча поколений</h3><p>Вековые традиции, история и память.</p></a></div></div>
+      </div>
+    </section>
+
+    <section class="events-section section-space" id="events" aria-labelledby="events-title">
+      <div class="container"><div class="section-heading"><div><span class="eyebrow light">Не пропустите</span><h2 id="events-title">Анонсы и календарь</h2></div><a class="text-link light" href="https://nenlib.ru/jirbis2/index.php?option=com_content&amp;view=category&amp;id=89&amp;Itemid=760">Смотреть всю афишу <svg><use href="#i-arrow"></use></svg></a></div>
+        <div class="events-grid">
+          <article class="event-card featured-event"><div class="event-date"><strong>2026</strong><span>год</span></div><div><span class="event-type">Проект библиотеки</span><h3>Программа «Арктика зовёт»</h3><p>Знакомство с культурой, историей и природой Русского Севера по Пушкинской карте.</p><a href="https://nenlib.ru/jirbis2/index.php?option=com_content&amp;view=article&amp;id=2450:programma-arktika-zovet&amp;catid=89:anons&amp;Itemid=760">Подробнее <svg><use href="#i-arrow"></use></svg></a></div></article>
+          <article class="event-card"><div class="event-date"><strong>30</strong><span>сентября</span></div><div><span class="event-type">Календарь дат</span><h3>День воссоединения новых регионов с Россией</h3><p>Памятная дата Российской Федерации.</p></div></article>
+          <article class="event-card"><div class="event-date"><strong>01</strong><span>октября</span></div><div><span class="event-type">Календарь дат</span><h3>Международный день пожилых людей</h3><p>День уважения, внимания и благодарности старшему поколению.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="actual-section section-space" aria-labelledby="actual-title"><div class="container"><div class="section-heading"><div><span class="eyebrow">Полезное</span><h2 id="actual-title">Актуально</h2></div></div><div class="actual-grid">
+      <a class="actual-card pushkin" href="https://nenlib.ru/jirbis2/index.php?option=com_content&amp;view=article&amp;id=2430&amp;Itemid=1029"><span>Культура для молодых</span><h3>Пушкинская карта</h3><p>Посещайте события библиотеки по федеральной программе.</p><b>Узнать больше <svg><use href="#i-arrow"></use></svg></b></a>
+      <a class="actual-card digital" href="https://nenlib.ru/jirbis2/index.php?option=com_content&amp;view=article&amp;id=954&amp;Itemid=624"><span>Доступ из библиотеки</span><h3>Электронные ресурсы</h3><p>Национальная электронная библиотека, периодика и справочные системы.</p><b>Открыть раздел <svg><use href="#i-arrow"></use></svg></b></a>
+      <a class="actual-card survey" href="https://nenlib.ru/jirbis2/index.php?option=com_content&amp;view=article&amp;id=2181"><span>Ваше мнение важно</span><h3>Оцените нашу работу</h3><p>Ответьте на несколько вопросов и помогите нам стать лучше.</p><b>Пройти опрос <svg><use href="#i-arrow"></use></svg></b></a>
+    </div></div></section>
+
+    <section class="about-section section-space" aria-labelledby="about-title"><div class="container about-grid"><div class="about-gallery"><img class="about-main" src="assets/reading-space.jpg" alt="Современное пространство для чтения в библиотеке"><img class="about-small" src="assets/digital-space.jpg" alt="Цифровое пространство библиотеки"></div><div class="about-copy"><span class="eyebrow">О библиотеке</span><h2 id="about-title">Пространство для чтения, знаний и общения</h2><p>Ненецкая центральная библиотека имени А. И. Пичкова — модельная библиотека нового типа и открытое городское пространство. Здесь можно работать, учиться, встречаться, открывать новые книги и исследовать культуру Севера.</p><div class="about-facts"><div><strong>1930</strong><span>год основания</span></div><div><strong>6</strong><span>пространств для читателей</span></div><div><strong>11:00–19:00</strong><span>ежедневно, кроме пятницы</span></div></div><a class="button dark" href="https://nenlib.ru/jirbis2/index.php?option=com_content&amp;view=article&amp;id=1">Узнать о библиотеке <svg><use href="#i-arrow"></use></svg></a></div></div></section>
+
+    <section class="visit-section"><div class="container visit-grid"><div class="visit-heading"><span class="eyebrow light">Приходите</span><h2>Мы рядом</h2><p>Центральная библиотека и филиалы в населённых пунктах Ненецкого автономного округа.</p></div><div class="visit-cards"><a href="https://yandex.ru/maps/?text=Нарьян-Мар%2C%20улица%20Победы%2C%208"><svg><use href="#i-pin"></use></svg><span><small>Центральная библиотека</small><strong>Нарьян-Мар, ул. Победы, 8</strong></span></a><a href="https://nenlib.ru/jirbis2/index.php?option=com_content&amp;view=article&amp;id=120"><svg><use href="#i-map"></use></svg><span><small>По всему округу</small><strong>Адреса библиотек-филиалов</strong></span></a></div></div></section>
+  </main>
+
+  <footer class="site-footer"><div class="container footer-grid"><div class="footer-brand"><a class="brand inverse" href="#top"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 64 64"><path d="M10 17c9-4 16-2 22 3v33c-6-5-13-7-22-3V17Z"></path><path d="M54 17c-9-4-16-2-22 3v33c6-5 13-7 22-3V17Z"></path><path d="m32 6 2.2 6.5L41 15l-6.8 2.5L32 24l-2.2-6.5L23 15l6.8-2.5L32 6Z"></path></svg></span><span class="brand-copy"><strong>Ненецкая центральная библиотека</strong><small>имени А. И. Пичкова</small></span></a><p>Подари себе счастье быть читателем.</p></div><div><h3>Читателям</h3><a href="https://nenlib.ru/jirbis2/index.php?option=com_irbis&amp;view=irbis&amp;Itemid=108">Электронный каталог</a><a href="https://nenlib.ru/jirbis2/index.php?option=com_irbis&amp;view=irbis&amp;Itemid=364">Новые поступления</a><a href="https://nenlib.ru/jirbis2/index.php?option=com_content&amp;view=category&amp;id=89&amp;Itemid=760">Афиша</a><a href="https://literary-map-nao.vercel.app/">Литературная карта</a></div><div><h3>Библиотека</h3><a href="https://nenlib.ru/jirbis2/index.php?option=com_content&amp;view=article&amp;id=1">О нас</a><a href="https://nenlib.ru/jirbis2/index.php?option=com_content&amp;view=article&amp;id=15&amp;Itemid=396">Отделы и службы</a><a href="https://nenlib.ru/jirbis2/index.php?option=com_content&amp;view=article&amp;id=120">Библиотеки-филиалы</a><a href="https://nenlib.ru/jirbis2/index.php?option=com_aicontactsafe&amp;view=message&amp;layout=message&amp;pf=3&amp;Itemid=718">Обратная связь</a></div><div class="footer-contacts"><h3>Контакты</h3><a href="tel:+78185342819">+7 (81853) 4-28-19</a><a href="mailto:library@nenlib.ru">library@nenlib.ru</a><p>166000, г. Нарьян-Мар,<br>ул. Победы, д. 8</p></div></div><div class="container footer-bottom"><span>© 2010–2026 ГБУК НАО «НЦБ им. А. И. Пичкова»</span><span>Прототип новой главной страницы</span></div></footer>
+
+  <div class="search-dialog" role="dialog" aria-modal="true" aria-labelledby="search-title" hidden><div class="search-backdrop"></div><div class="search-panel"><button class="search-close" type="button" aria-label="Закрыть поиск"><svg><use href="#i-close"></use></svg></button><span class="eyebrow">Поиск по сайту</span><h2 id="search-title">Что вы хотите найти?</h2><form class="search-form" action="https://nenlib.ru/jirbis2/index.php" method="get"><input type="hidden" name="option" value="com_search"><label class="sr-only" for="site-search">Поисковый запрос</label><input id="site-search" name="searchword" type="search" placeholder="Например: краеведение" required><button type="submit"><svg><use href="#i-search"></use></svg><span>Найти</span></button></form><p>Популярное: <a href="https://nenlib.ru/jirbis2/index.php?option=com_irbis&amp;view=irbis&amp;Itemid=108">электронный каталог</a>, <a href="https://nenlib.ru/jirbis2/index.php?option=com_content&amp;view=article&amp;id=2114&amp;Itemid=409">режим работы</a>, <a href="https://nenlib.ru/jirbis2/index.php?option=com_content&amp;view=category&amp;id=89&amp;Itemid=760">афиша</a></p></div></div>
+  <button class="to-top" type="button" aria-label="Вернуться наверх"><svg viewBox="0 0 24 24"><path d="m6 15 6-6 6 6"></path></svg></button>
+  <script src="app.js"></script>
+</body>
+</html>
